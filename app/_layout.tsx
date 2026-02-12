@@ -1,24 +1,25 @@
 import { Stack } from "expo-router";
+import AboutHeader from "../components/AboutHeader";
 
 export default function RootLayout() {
   return (
-    <>
-     <Stack
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#f4511e',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-      }}>
-      {/* Optionally configure static options outside the route.*/}
-      <Stack.Screen name="home" options={{}} />
-      <Stack.Screen name="about" options={{}} />
-      <Stack.Screen name="blog" options={{}} />
-    </Stack>
-    
-    </>
-  )
+   <Stack
+  screenOptions={{
+    headerShown: false,
+    headerStyle: { backgroundColor: "blue" },
+    headerTintColor: "white",
+  }}
+>
+<Stack.Screen name="(drawer)"/>
+  <Stack.Screen name="index" />
+  <Stack.Screen name="(tab)" options={{headerShown: false }}/>
+  <Stack.Screen
+    name="about"
+    options={{
+     header:() => <AboutHeader />
+    }}
+  />
+</Stack>
+
+  );
 }
