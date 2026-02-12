@@ -4,7 +4,12 @@ import { Ionicons } from "@expo/vector-icons";
 export default function DrawerLayout() {
   return (
     <Drawer>
-        <Drawer.Screen options={{}}/>
+    
+  <Drawer.Screen name="index" options={{ title: "Home"}} />
+  <Drawer.Screen name="settings" options={{ title: "Settings" }} />
+
+
+        {/* <Drawer.Screen options={{}}/>
       <Drawer.Screen
         name="index"
         options={{
@@ -33,7 +38,7 @@ export default function DrawerLayout() {
             <Ionicons name="book" size={size} color={color} />
           ),
         }}
-      />
+      /> */}
     </Drawer>
   );
 }
